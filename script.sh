@@ -100,8 +100,65 @@ case $choose in
 		echo "None of the above"
 esac
 	
+echo "========================divible=================="
+
+divible(){
+
+        local num=$1
+        echo "your worte $num"
+
+        reminder=$(( $num%2 ))
+        echo " the reminder is $reminder"
+
+	if [ $reminder -eq 0 ]; then
+		echo " the number $num is divisble by 2"
+	fi
+
+}
+
+divible 9
+~
+
+echo "------------------reminder----------------"
+
+divible(){
+	local num=$1
+	echo"the wote $num"
+
+	if [ $(( $num%2 )) -eq 0 ];then
+		echo" the number $num divisble by 2"
+	fi
+        if [ $(( $num%3 )) -eq 0 ];then
+                echo" the number $num divisble by 3"
+        fi
+        if [ $(( $num%5 )) -eq 0 ];then
+                echo" the number $num divisble by 5"
+        fi
+
+}
+
+divible 3
+
+
+
+echo "----------------------======================"
+
+divible(){
+	local num=$1
+	echo"number $num"
+
+	for i in {1,3,5}
+		do
+			if [ $(( $num%$i )) -eq 0 ];then
+				echo" the number $num divisble by $i "
+			fi
+		done
+
+	}
+
+divible 30
 
 
 
 
-
+0
